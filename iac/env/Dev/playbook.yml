@@ -11,10 +11,18 @@
       name: "openjdk-11-jdk"
       state: present
     become: yes
-  - name: Clone repositório do Sophya
+  - name: Clone o repositório do Sophya
     ansible.builtin.expect:
       chdir: /home/ubuntu/repos/
-      command: git clone https://github.com/pablicio/sophya.git 2>/dev/nul
+      command: git clone https://github.com/pablicio/sophya.git 2>/dev/null
+      responses:
+        Username: "pablicio"
+        Password: "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"
+    become: yes
+  - name: Sincronize o repositório do Sophya
+    ansible.builtin.expect:
+      chdir: /home/ubuntu/repos/sophya
+      command: git pull
       responses:
         Username: "pablicio"
         Password: "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"

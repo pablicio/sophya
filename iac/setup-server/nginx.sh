@@ -1,6 +1,6 @@
 #! /bin/sh
 
-cat > c4_server.conf << EOF
+cat > doc_server.conf << EOF
 server {
     listen       8080;          # a customed port
 
@@ -14,13 +14,13 @@ server {
     add_header 'Cache-Control' 'no-cache, no-store, must-revalidate';
 
     location / {
-        root /vagrant/aulas/c4_samples;
+        root /home/ubuntu/repos/sophya/core/services;
     }
 }
 EOF
 
-sudo cp -R c4_server.conf /etc/nginx/sites-available/c4_server.conf
-sudo ln -s /etc/nginx/sites-available/c4_server.conf /etc/nginx/sites-enabled/ 2>/dev/null
+sudo cp -R doc_server.conf /etc/nginx/sites-available/doc_server.conf
+sudo ln -s /etc/nginx/sites-available/doc_server.conf /etc/nginx/sites-enabled/ 2>/dev/null
 
 sudo systemctl reload nginx
 
