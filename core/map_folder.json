@@ -1,0 +1,206 @@
+[
+  {
+    "path": "/c4-model-doc",
+    "files": [
+      "sobre-o-c4-model.md"
+    ],
+    "items": [
+      {
+        "path": "/c4-model-doc/code",
+        "files": [
+          "code.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Code",
+        "md_slug": "code.md"
+      },
+      {
+        "path": "/c4-model-doc/component",
+        "files": [
+          "component.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Component",
+        "md_slug": "component.md"
+      },
+      {
+        "path": "/c4-model-doc/container",
+        "files": [
+          "container.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Container",
+        "md_slug": "container.md"
+      },
+      {
+        "path": "/c4-model-doc/context",
+        "files": [
+          "context.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Context",
+        "md_slug": "context.md"
+      }
+    ],
+    "name": "Sobre O C4 Model",
+    "md_slug": "sobre-o-c4-model.md"
+  },
+  {
+    "path": "/claim-service",
+    "files": [
+      "claim-service.md"
+    ],
+    "items": [
+      {
+        "path": "/claim-service/code",
+        "files": [
+          "code.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [
+          {
+            "path": "/claim-service/code/api",
+            "files": [
+              "api.md"
+            ],
+            "items": [
+              {
+                "path": "/claim-service/code/api/activities",
+                "files": [
+                  "activities.md",
+                  "rest.json"
+                ],
+                "items": [],
+                "name": "Activities",
+                "md_slug": "activities.md"
+              },
+              {
+                "path": "/claim-service/code/api/claims",
+                "files": [
+                  "claims.md",
+                  "rest.json"
+                ],
+                "items": [],
+                "name": "Claims",
+                "md_slug": "claims.md"
+              }
+            ],
+            "name": "Api",
+            "md_slug": "api.md"
+          },
+          {
+            "path": "/claim-service/code/open-claim",
+            "files": [
+              "diagram1.png",
+              "diagram1.puml",
+              "fluxo-de-abertura-de-sinistro.md"
+            ],
+            "items": [],
+            "name": "Fluxo De Abertura De Sinistro",
+            "md_slug": "fluxo-de-abertura-de-sinistro.md"
+          }
+        ],
+        "name": "Code",
+        "md_slug": "code.md"
+      },
+      {
+        "path": "/claim-service/component",
+        "files": [
+          "component.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Component",
+        "md_slug": "component.md"
+      },
+      {
+        "path": "/claim-service/container",
+        "files": [
+          "container.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Container",
+        "md_slug": "container.md"
+      },
+      {
+        "path": "/claim-service/context",
+        "files": [
+          "context.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Context",
+        "md_slug": "context.md"
+      }
+    ],
+    "name": "Claim Service",
+    "md_slug": "claim-service.md"
+  },
+  {
+    "path": "/media-service",
+    "files": [
+      "media-service.md"
+    ],
+    "items": [
+      {
+        "path": "/media-service/code",
+        "files": [
+          "code.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Code",
+        "md_slug": "code.md"
+      },
+      {
+        "path": "/media-service/component",
+        "files": [
+          "component.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Component",
+        "md_slug": "component.md"
+      },
+      {
+        "path": "/media-service/container",
+        "files": [
+          "container.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Container",
+        "md_slug": "container.md"
+      },
+      {
+        "path": "/media-service/context",
+        "files": [
+          "context.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Context",
+        "md_slug": "context.md"
+      }
+    ],
+    "name": "Media Service",
+    "md_slug": "media-service.md"
+  }
+]

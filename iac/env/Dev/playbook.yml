@@ -1,28 +1,21 @@
 - hosts: terraform-ansible
   tasks:
-  - name: Instalando o python3, virtualenv
+  - name: Instalando o python3
     apt: 
       pkg:
       - python3
-      - virtualenv
       update_cache: yes
     become: yes
-  - name: Instalando dependências com pip (Django e Django Rest)
-    pip:
-      virtualenv: /home/ubuntu/tcc/venv
-      name:
-        - django
-        - djangorestframework
-  - name: Verificando se o projeto já existe
-    stat:
-      path: /home/ubuntu/tcc/setup/settings.py
-    register: projeto
-  - name: Iniciando Projeto
-    shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc'
-    when: not projeto.stat.exists
-  - name: Alterando o hosts do settings
-    lineinfile:
-      path: /home/ubuntu/tcc/setup/settings.py
-      regexp: 'ALLOWED_HOSTS'
-      line: 'ALLOWED_HOSTS = ["*"]'
-      backrefs: yes
+  - name: Instalando o Java
+    apt:
+      name: "openjdk-11-jdk"
+      state: present
+    become: yes
+  - name: Clone repositório do Sophya
+    ansible.builtin.expect:
+      chdir: /home/ubuntu/repos/
+      command: git clone https://github.com/pablicio/sophya.git 2>/dev/nul
+      responses:
+        Username: "pablicio"
+        Password: "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"
+    become: yes
