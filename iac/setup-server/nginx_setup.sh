@@ -1,4 +1,5 @@
 #! /bin/sh
+sudo ufw allow 'Nginx HTTP'
 
 cat > doc_server.conf << EOF
 server {

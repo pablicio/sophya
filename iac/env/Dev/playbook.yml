@@ -1,5 +1,16 @@
 - hosts: terraform-ansible
   tasks:
+  - name: Instalando Ultima Versão Nginx
+    apt: 
+      pkg:
+      - nginx
+      update_cache: yes
+    become: yes
+  - name: Iniciando Nginx
+    service:
+      name: nginx
+      state: started
+      enabled: yes
   - name: Instalando o python3
     apt: 
       pkg:
@@ -11,6 +22,10 @@
       name: "openjdk-11-jdk"
       state: present
     become: yes
+  - name: Verificando se o projeto já existe
+    stat:
+      path: /home/ubuntu/repos/sophya/core/c4_generate.sh
+    register: projeto
   - name: Clone o repositório do Sophya
     ansible.builtin.expect:
       chdir: /home/ubuntu/repos/
@@ -19,6 +34,7 @@
         Username: "pablicio"
         Password: "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"
     become: yes
+    when: not projeto.stat.exists
   - name: Sincronize o repositório do Sophya
     ansible.builtin.expect:
       chdir: /home/ubuntu/repos/sophya
