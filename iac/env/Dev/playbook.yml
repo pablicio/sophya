@@ -19,7 +19,12 @@
     become: yes
   - name: Instalando o Java
     apt:
-      name: "openjdk-11-jdk"
+      name: openjdk-11-jdk
+      state: present
+    become: yes
+  - name: Instalando o GraphViz
+    apt:
+      name: graphviz
       state: present
     become: yes
   - name: Verificando se o projeto já existe
