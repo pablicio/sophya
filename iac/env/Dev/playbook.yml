@@ -11,6 +11,11 @@
       name: nginx
       state: started
       enabled: yes
+  - name: Configurando Doc Service com Nginx
+    ansible.builtin.shell:
+      chdir: /home/ubuntu/repos/sophya/iac/setup-server
+      cmd: sh nginx_setup.sh
+    become: yes
   - name: Instalando o python3
     apt: 
       pkg:
@@ -40,7 +45,7 @@
         Password: "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"
     become: yes
     when: not projeto.stat.exists
-  - name: Sincronize o repositório do Sophya
+  - name: Sincronizando o repositório do Sophya
     ansible.builtin.expect:
       chdir: /home/ubuntu/repos/sophya
       command: git pull

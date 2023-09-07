@@ -1,10 +1,11 @@
 #! /bin/sh
 sudo ufw allow 'Nginx HTTP'
 
-cat > doc_server.conf << EOF
+cat > doc_server << EOF
 server {
     listen       8080;          # a customed port
-
+    server_name doc_server;
+    
     # download
     autoindex on;               # enable directory listing output
     autoindex_exact_size off;   # output file sizes rounded to kilobytes, megabytes, and gigabytes
@@ -20,8 +21,8 @@ server {
 }
 EOF
 
-sudo cp -R doc_server.conf /etc/nginx/sites-available/doc_server.conf
-sudo ln -s /etc/nginx/sites-available/doc_server.conf /etc/nginx/sites-enabled/ 2>/dev/null
+sudo cp -R doc_server /etc/nginx/sites-available/doc_server
+sudo ln -s /etc/nginx/sites-available/doc_server /etc/nginx/sites-enabled/ 2>/dev/null
 
 sudo systemctl reload nginx
 
