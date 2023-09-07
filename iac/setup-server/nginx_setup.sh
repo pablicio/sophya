@@ -23,18 +23,18 @@ EOF
 
 cat > sophya_web << EOF
 server {
-    listen      8081;
-    server_name sophya_web;    
+    listen      8082;
+    server_name vue-app;
     charset utf-8;
     root    /var/www/sophya-web/dist;
-    index   index.html;
-    #Always serve index.html for any request
+    index   index.html index.htm;
+    # Always serve index.html for any request
     location / {
         root /var/www/sophya-web/dist;
-        try_files $uri  /index.html;
-    }    
-    error_log  /var/log/nginx/sophya-web-error.log;
-    access_log /var/log/nginx/sophya-web-access.log;
+        try_files $uri /index.html;
+    }
+    error_log  /var/log/nginx/vue-app-error.log;
+    access_log /var/log/nginx/vue-app-access.log;
 }
 EOF
 

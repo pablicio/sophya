@@ -11,11 +11,6 @@
       name: nginx
       state: started
       enabled: yes
-  - name: Configurando Doc Service com Nginx
-    ansible.builtin.shell:
-      chdir: /home/ubuntu/repos/sophya/iac/setup-server
-      cmd: sh nginx_setup.sh
-    become: yes
   - name: Instalando o python3
     apt: 
       pkg:
@@ -56,7 +51,7 @@
   - name: Verificando se o repo sophya web já existe
     stat:
       path: /var/www/sophya-web/package.json
-    register: sophya-web
+    register: sophyaweb
   - name: Clone o repositório do Sophya Web
     ansible.builtin.expect:
       chdir: /var/www/
@@ -65,7 +60,7 @@
         Username: "pablicio"
         Password: "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"
     become: yes
-    when: not sophya-web.stat.exists
+    when: not sophyaweb.stat.exists
   - name: Sincronizando o repositório do Sophya Web
     ansible.builtin.expect:
       chdir: /var/www/sophya-web
@@ -73,4 +68,9 @@
       responses:
         Username: "pablicio"
         Password: "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"
+    become: yes
+  - name: Configurando Doc Service com Nginx
+    ansible.builtin.shell:
+      chdir: /home/ubuntu/repos/sophya/iac/setup-server
+      cmd: sh nginx_setup.sh
     become: yes
