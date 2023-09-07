@@ -1,66 +1,56 @@
 [
   {
-    "path": "/services",
+    "path": "/c4-model-doc",
     "files": [
-      "map_folder.json"
+      "sobre-o-c4-model.md"
     ],
     "items": [
       {
-        "path": "/services/c4-model-doc",
+        "path": "/c4-model-doc/code",
         "files": [
-          "sobre-o-c4-model.md"
+          "code.md",
+          "diagram1.png",
+          "diagram1.puml"
         ],
-        "items": [
-          {
-            "path": "/services/c4-model-doc/code",
-            "files": [
-              "code.md",
-              "diagram1.png",
-              "diagram1.puml"
-            ],
-            "items": [],
-            "name": "Code",
-            "md_slug": "code.md"
-          },
-          {
-            "path": "/services/c4-model-doc/component",
-            "files": [
-              "component.md",
-              "diagram1.png",
-              "diagram1.puml"
-            ],
-            "items": [],
-            "name": "Component",
-            "md_slug": "component.md"
-          },
-          {
-            "path": "/services/c4-model-doc/container",
-            "files": [
-              "container.md",
-              "diagram1.png",
-              "diagram1.puml"
-            ],
-            "items": [],
-            "name": "Container",
-            "md_slug": "container.md"
-          },
-          {
-            "path": "/services/c4-model-doc/context",
-            "files": [
-              "context.md",
-              "diagram1.png",
-              "diagram1.puml"
-            ],
-            "items": [],
-            "name": "Context",
-            "md_slug": "context.md"
-          }
+        "items": [],
+        "name": "Code",
+        "md_slug": "code.md"
+      },
+      {
+        "path": "/c4-model-doc/component",
+        "files": [
+          "component.md",
+          "diagram1.png",
+          "diagram1.puml"
         ],
-        "name": "Sobre O C4 Model",
-        "md_slug": "sobre-o-c4-model.md"
+        "items": [],
+        "name": "Component",
+        "md_slug": "component.md"
+      },
+      {
+        "path": "/c4-model-doc/container",
+        "files": [
+          "container.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Container",
+        "md_slug": "container.md"
+      },
+      {
+        "path": "/c4-model-doc/context",
+        "files": [
+          "context.md",
+          "diagram1.png",
+          "diagram1.puml"
+        ],
+        "items": [],
+        "name": "Context",
+        "md_slug": "context.md"
       }
     ],
-    "name": "",
-    "md_slug": ""
+    "name": "Sobre O C4 Model",
+    "md_slug": "sobre-o-c4-model.md"
   }
 ]
