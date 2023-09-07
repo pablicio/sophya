@@ -21,8 +21,28 @@ server {
 }
 EOF
 
+cat > sophya_web << EOF
+server {
+    listen      8081;
+    server_name sophya_web;    
+    charset utf-8;
+    root    /var/www/sophya-web/dist;
+    index   index.html;
+    #Always serve index.html for any request
+    location / {
+        root /var/www/sophya-web/dist;
+        try_files $uri  /index.html;
+    }    
+    error_log  /var/log/nginx/sophya-web-error.log;
+    access_log /var/log/nginx/sophya-web-access.log;
+}
+EOF
+
 sudo cp -R doc_server /etc/nginx/sites-available/doc_server
 sudo ln -s /etc/nginx/sites-available/doc_server /etc/nginx/sites-enabled/ 2>/dev/null
+
+sudo cp -R sophya_web /etc/nginx/sites-available/sophya_web
+sudo ln -s /etc/nginx/sites-available/sophya_web /etc/nginx/sites-enabled/ 2>/dev/null
 
 sudo systemctl reload nginx
 

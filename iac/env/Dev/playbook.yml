@@ -32,22 +32,43 @@
       name: graphviz
       state: present
     become: yes
-  - name: Verificando se o projeto já existe
+  - name: Verificando se o repo sophya já existe
     stat:
       path: /home/ubuntu/repos/sophya/core/c4_generate.sh
-    register: projeto
+    register: sophya
   - name: Clone o repositório do Sophya
     ansible.builtin.expect:
       chdir: /home/ubuntu/repos/
-      command: git clone https://github.com/pablicio/sophya.git 2>/dev/null
+      command: git clone https://github.com/pablicio/sophya.git
       responses:
         Username: "pablicio"
         Password: "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"
     become: yes
-    when: not projeto.stat.exists
+    when: not sophya.stat.exists
   - name: Sincronizando o repositório do Sophya
     ansible.builtin.expect:
       chdir: /home/ubuntu/repos/sophya
+      command: git pull
+      responses:
+        Username: "pablicio"
+        Password: "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"
+    become: yes
+  - name: Verificando se o repo sophya web já existe
+    stat:
+      path: /var/www/sophya-web/package.json
+    register: sophya-web
+  - name: Clone o repositório do Sophya Web
+    ansible.builtin.expect:
+      chdir: /var/www/
+      command: git clone https://github.com/pablicio/sophya-web.git
+      responses:
+        Username: "pablicio"
+        Password: "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"
+    become: yes
+    when: not sophya-web.stat.exists
+  - name: Sincronizando o repositório do Sophya Web
+    ansible.builtin.expect:
+      chdir: /var/www/sophya-web
       command: git pull
       responses:
         Username: "pablicio"
