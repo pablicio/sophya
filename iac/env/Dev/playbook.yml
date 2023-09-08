@@ -69,6 +69,10 @@
         Username: "pablicio"
         Password: "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"
     become: yes
+  - name: Sincronizando o servidor com os códigos de processamento de imagens
+    ansible.builtin.shell:
+      chdir: /home/ubuntu
+      cmd: rsync -av --recursive --exclude= -rltgoDzavO --delete repos/sophya/core/ core/
   - name: Configurando Doc Service com Nginx
     ansible.builtin.shell:
       chdir: /home/ubuntu/repos/sophya/iac/setup-server

@@ -46,14 +46,14 @@ def list_files(startpath):
               md_slug = f
 
         return {
-          'path': root[10:],
+          'path': root[7:],
           'files': files_lst,
           'items': dir_content,
           'name': md_name,
           'md_slug': md_slug
         }
 
-output = list_files('./services')
+output = list_files('../docs')
 
 # Convert the data to a JSON formatted string with 4 spaces of indentation
 json_str = json.dumps(output["items"], indent=2)

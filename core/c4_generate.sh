@@ -8,5 +8,5 @@
 # done
   
 ## generate current folder structure and save in json
-`rm services/map_folder.json 2> /dev/null`;
-`python3 map_formatter.py >> services/map_folder.json`;
+`rm ../docs/map_folder.json 2>/dev/null`;
+`python3 map_formatter.py 2>/dev/null >> ../docs/map_folder.json`;
