@@ -17,7 +17,7 @@
       - python3
       update_cache: yes
     become: yes
-  - name: Instalando o Java
+  - name: Instalando o Java JDK
     apt:
       name: openjdk-11-jdk
       state: present
