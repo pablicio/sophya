@@ -8,7 +8,7 @@ jobs:
     name: Generate Documentation
     runs-on: ubuntu-latest
     env: 
-      REPO_NAME: sophya-service
+      REPO_NAME: sophya
       GIT_USER: pablicio
       FILE_CHECK: core/c4_generate.sh
     steps:
