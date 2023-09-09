@@ -8,9 +8,9 @@ jobs:
     name: Generate Documentation
     runs-on: ubuntu-latest
     env: 
-      REPO_NAME: store-service
+      REPO_NAME: sophya-service
       GIT_USER: pablicio
-      FILE_CHECK: README.md
+      FILE_CHECK: core/c4_generate.sh
     steps:
     - name: Sync Documentation Folder
       uses: appleboy/ssh-action@master

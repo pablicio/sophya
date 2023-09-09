@@ -5,7 +5,6 @@
 
 LAYOUT_WITH_LEGEND()
 
-
 title Thiago Pablicio Cabral Nogueira!
 
 Container(spa, "Single Page Application", "javascript and angular", "Provides all the internet banking functionality to customers via their web browser.")
