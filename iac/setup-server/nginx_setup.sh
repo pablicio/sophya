@@ -31,7 +31,7 @@ server {
     # Always serve index.html for any request
     location / {
         root /var/www/sophya-web/dist;
-        try_files $uri $uri/ /index.html;
+        try_files $uri /index.html;
     }
     error_log  /var/log/nginx/vue-app-error.log;
     access_log /var/log/nginx/vue-app-access.log;
