@@ -1,0 +1,25 @@
+name: Generate Documentation
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Generate Documentation
+    runs-on: ubuntu-latest
+    env: 
+      REPO_NAME: store-service
+      GIT_USER: pablicio
+      FILE_CHECK: README.md
+    steps:
+    - name: Sync Documentation Folder
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        username:  ${{ secrets.REMOTE_USER }}
+        script: |
+          cd /home/ubuntu/core
+          sh sync_repo.sh ${{ env.REPO_NAME }} ${{ env.GIT_USER }} ${{ secrets.TOKEN_GIT_REPO }} ${{ env.FILE_CHECK }}
+          sh sync_docs.sh ${{ env.REPO_NAME }}
+          sh c4_generate.sh ${{ env.REPO_NAME }}

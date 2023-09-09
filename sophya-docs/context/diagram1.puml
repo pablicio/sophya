@@ -3,12 +3,11 @@
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Context.puml
 
-
 'LAYOUT_TOP_DOWN()
 'LAYOUT_AS_SKETCH()
 LAYOUT_WITH_LEGEND()
 
-title System Landscape diagram for Big Bank plc
+title Ei Test Store
 
 Person(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
 
