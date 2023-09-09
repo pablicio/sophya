@@ -23,20 +23,17 @@ EOF
 
 cat > sophya_web << EOF
 server {
-		listen 80;
-		server_name sophya_web_app;
-
-		charset utf-8;
-		root /var/www/sophya-web/dist;
-		index index.html index.htm;
-
-		location / {
-			root /var/www/sophya-web/dist;
-			try_files $uri $uri/ /index.html;
-		}
-
-		include  /etc/nginx/mime.types;
-	}
+    listen 80;
+    listen [::]:80;
+    root /var/www/sophya-web/dist;
+    server_name sophya_web localhost;
+    access_log /var/log/nginx/sophya_web.log;
+    error_log /var/log/nginx/sophya_web.log;
+    location / {
+        proxy_pass http://35.90.20.195:8001;
+        try_files $uri $uri/ =404;
+    }
+}
 EOF
 
 sudo cp -R doc_server /etc/nginx/sites-available/doc_server
