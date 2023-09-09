@@ -5,7 +5,8 @@
 # $4  = file-check
 # example sh sync_repo.sh my-repo-name user-git token-git README.md
 
-if [[ test -f /home/ubuntu/repos/$1/$4 2>/dev/null ]]; then
+FILE=/home/ubuntu/repos/$1/$4
+if test -f $FILE; then
   cd /home/ubuntu/repos/$1
   git fetch
   rm /home/ubuntu/docs/diff.json
