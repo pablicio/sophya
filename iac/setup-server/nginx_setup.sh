@@ -16,7 +16,7 @@ server {
     add_header 'Cache-Control' 'no-cache, no-store, must-revalidate';
 
     location / {
-        root /home/ubuntu/repos/sophya/core/services;
+        root /home/ubuntu/docs;
     }
 }
 EOF
