@@ -23,7 +23,7 @@ EOF
 
 cat > sophya_web << EOF
 server {
-    listen      8082;
+    listen      8001;
     server_name sophya_web_app;
     charset utf-8;
     root    /var/www/sophya-web/dist;
