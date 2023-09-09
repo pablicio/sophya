@@ -16,7 +16,7 @@ else
   git clone https://github.com/$2/$1.git /home/ubuntu/repos/$1 2>/dev/null
   chmod 744 -R /home/ubuntu/repos/$1/
   chmod 744 -R /home/ubuntu/docs/
-  rm /home/ubuntu/docs/diff.json
+  rm /home/ubuntu/docs/diff.json 2>/dev/null
   find /home/ubuntu/repos/$1/sophya-docs -type f  -name "*.puml" -mmin -60 >> /home/ubuntu/docs/diff.json
 fi
 
