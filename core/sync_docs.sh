@@ -7,4 +7,4 @@
 
 cd /home/ubuntu/repos/$1
 git pull
-rsync -rltgoDzvO --delete /home/ubuntu/repos/$1/sophya-docs/ /home/ubuntu/docs/$1/
+rsync -rltgoDzvO /home/ubuntu/repos/$1/sophya-docs/ /home/ubuntu/docs/$1/
