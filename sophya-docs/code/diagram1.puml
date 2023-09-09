@@ -5,7 +5,8 @@
 
 LAYOUT_WITH_LEGEND()
 
-title Thiago Pablicio Cabral Nogueira!
+
+title Sophya Test
 
 Container(spa, "Single Page Application", "javascript and angular", "Provides all the internet banking functionality to customers via their web browser.")
 Container(ma, "Mobile App", "Xamarin", "Provides a limited subset ot the internet banking functionality to customers via their mobile mobile device.")
