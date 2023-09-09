@@ -9,7 +9,7 @@ if [[ -f /home/ubuntu/repos/$1/$4 2>/dev/null ]]; then
   cd /home/ubuntu/repos/$1
   git fetch
   rm /home/ubuntu/docs/diff.json
-  git diff --name-only origin/main | egrep '\.(puml)$' >> /home/ubuntu/docs/diff.json
+  git diff --name-only main origin/main | egrep '\.(puml)$' >> /home/ubuntu/docs/diff.json
   chmod 744 /home/ubuntu/docs/diff.json
 else
   git config user.name $2 2>/dev/null
