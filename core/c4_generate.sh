@@ -1,7 +1,7 @@
 # #!/bin/bash
 # `git fetch 2>/dev/null`;
 
-for i in `/home/ubuntu/docs/diff.json`; do
+for i in `sudo /home/ubuntu/docs/diff.json`; do
   # generated images from .puml file
   `sudo java -jar plantuml.jar $i`;
 done
