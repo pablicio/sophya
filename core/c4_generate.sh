@@ -1,10 +1,9 @@
 # #!/bin/bash
-# `git fetch 2>/dev/null`;
 
-for i in `/home/ubuntu/docs/diff.json`; do
+for i in `cat /home/ubuntu/docs/diff.json`; do
   # generated images from .puml file
-  path_to_file=`cut -c 12- <<< $i`;
-  `java -jar plantuml.jar /home/ubuntu/docs/$1/$path_to_file`;
+  path_to_file=`echo $i | cut -c 12-`
+  `java -jar plantuml.jar /home/ubuntu/docs/$1/$path_to_file 2>/dev/null`;
 done
   
 ## generate current folder structure and save in json
