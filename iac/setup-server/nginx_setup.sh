@@ -3,8 +3,8 @@ sudo ufw allow 'Nginx HTTP'
 
 cat > doc_server << EOF
 server {
-    listen       8080;          # a customed port
-    server_name doc_server;
+    listen       8000;          # a customed port
+    server_name doc_server_app;
     
     # download
     autoindex on;               # enable directory listing output
@@ -23,8 +23,8 @@ EOF
 
 cat > sophya_web << EOF
 server {
-    listen      8082;
-    server_name vue-app;
+    listen      8081;
+    server_name sophya_web_app;
     charset utf-8;
     root    /var/www/sophya-web/dist;
     index   index.html index.htm;
