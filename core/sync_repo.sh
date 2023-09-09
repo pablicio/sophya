@@ -12,7 +12,7 @@ if test -f $FILE; then
   rm /home/ubuntu/docs/diff.json
   git diff --name-only main origin/main | egrep '\.(puml)$' >> /home/ubuntu/docs/diff.json
   chmod 744 /home/ubuntu/docs/diff.json
-  git checkout .
+  git checkout . 2>/dev/null
 else
   git config user.name $2 2>/dev/null
   git config github.token $3 2>/dev/null

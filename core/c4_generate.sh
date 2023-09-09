@@ -3,7 +3,8 @@
 
 for i in `/home/ubuntu/docs/diff.json`; do
   # generated images from .puml file
-  `java -jar plantuml.jar $i`;
+  path_to_file=`cut -c 12- <<< $i`;
+  `java -jar plantuml.jar /home/ubuntu/docs/$1/$path_to_file`;
 done
   
 ## generate current folder structure and save in json
