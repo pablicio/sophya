@@ -11,7 +11,7 @@ if [[ -f /home/ubuntu/repos/$1/$4 ]]; then
   rm /home/ubuntu/docs/diff.json
   git diff --name-only origin/main | egrep '\.(puml)$' >> /home/ubuntu/docs/diff.json
 else
-  git config user.name $2
-  git config github.token $3
+  git config user.name $2 2>/dev/null
+  git config github.token $3 2>/dev/null
   git clone https://github.com/$2/$1.git /home/ubuntu/repos/$1 2>/dev/null
 fi
